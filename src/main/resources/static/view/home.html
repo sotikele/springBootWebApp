@@ -1,0 +1,57 @@
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#!/home">Welcome</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li><a href="#" type="button" ng-click="logOut() ">logout</a></li>
+            <li><a href="#!/cpass">changePassword</a></li>
+        </ul>
+    </div>
+</nav>
+
+<div ng-controller="homeCtrl">
+
+    <div class="container">
+
+        <button type="button" class="btn btn-primary" ng-click="showUserBooks()">check Your Books</button>
+
+        <table class="table">
+            <tr>
+                <th>Title</th>
+                <th>Author</th>
+            </tr>
+            <tr class="info" ng-repeat="x in myData">
+                <td>{{ x.title }}</td>
+                <td>{{ x.author }}</td>
+            </tr>
+        </table>
+        <div ng-show=userMessages>
+            <p><b>{{noBooksMessage}}</b></p>
+        </div>
+        <br>
+        <br>
+    </div>
+
+    <form name="myForm" novalidate>
+        <h4> Add Book</h4>
+        <input type="text" placeholder="Enter Title" ng-model="title" name="title"><br>
+
+        <input type="text" placeholder="Enter author" ng-model="author" name="author"><br>
+        <button type="button" class="btn btn-primary" ng-disabled="!myForm.title.$dirty && !myForm.author.$dirty"
+                ng-click="addBook()">add book
+        </button>
+        <p>{{addedMessage}}</p>
+    </form>
+
+    <form name="delForm" novalidate>
+        <h4> Delete Book</h4>
+        <input type="text" placeholder="Enter Title" ng-model="dTitle" name="dTitle"><br>
+
+        <button type="button" class="btn btn-primary" ng-disabled="myForm.dTitle.$dirty" ng-click="deleteBook()">Delete
+            book
+        </button>
+        <p>{{deletedMessage}}</p>
+    </form>
+</div>
+

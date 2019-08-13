@@ -1,0 +1,29 @@
+<div class="container centerForm" style="width: 20%" ng-controller="loginCtrl">
+
+    <form class="w-50" name="loginForm" novalidate>
+        <h3>Change Password</h3>
+        <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+            <input type="text" class="form-control" name="oldPassword" ng-model="oldPassword" placeholder="Old Password"
+                   required>
+        </div>
+        <br>
+        <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+            <input type="password" class="form-control" name="newPassword" ng-model="newPassword"
+                   placeholder="New Password" required>
+        </div>
+        <br>
+        <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-repeat"></i></span>
+            <input type="password" class="form-control" name="repNewPassword" ng-model="repNewPassword"
+                   placeholder="Repeat New Password" required>
+        </div>
+
+        <br>
+
+            <button type="button" class="btn btn-danger" ng-click="back()">Cancel</button>
+            <button class="btn btn-success" ng-click="savePassword()"> Save</button>
+    </form>
+    <p>{{message}}</p>
+</div>

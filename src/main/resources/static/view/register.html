@@ -1,0 +1,43 @@
+<div class="container centerForm " style="width: 20%" ng-controller="registerCtrl">
+    <form class="w-50" name="myForm" novalidate>
+        <h3>Sign Up</h3>
+        <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+            <input type="text" class="form-control" placeholder="Enter Name" ng-model="name" name="name">
+        </div>
+        <br>
+        <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+            <input type="email" class="form-control" placeholder="Enter Email" ng-model="email" name="email">
+        </div>
+        <br>
+        <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+            <input type="text" class="form-control" placeholder="Enter username" ng-model="username" name="username">
+        </div>
+        <br>
+        <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+            <input type="password" class="form-control" placeholder="Enter Password" ng-model="password" name="password">
+        </div>
+        <br>
+        <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-repeat"></i></span>
+            <input type="password" class="form-control" placeholder="Repeat Password" ng-model="cpassword" name="cpassword">
+        </div>
+        <br>
+        <button class="btn btn-danger" ng-click="back()">Cancel</button>
+        <button class="btn btn-success" ng-click="register()"> Sign Up</button>
+
+
+    </form>
+    <p>{{message}}</p>
+
+</div>
+
+
+
+
+
+
+

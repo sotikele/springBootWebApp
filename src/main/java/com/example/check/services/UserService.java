@@ -48,7 +48,6 @@ public class UserService {
     private JwtTokenUtil jwtTokenUtil;
 
 
-
     public String login(String username,String password) throws Exception    {
 
             //TODO  2 authenticate methods

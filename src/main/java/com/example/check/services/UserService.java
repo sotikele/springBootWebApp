@@ -6,6 +6,7 @@ import com.example.check.models.Book;
 import com.example.check.models.User;
 import com.example.check.repositorys.UserRepository;
 
+import com.example.check.security.IAuthenticationFacade;
 import com.example.check.security.JwtTokenUtil;
 import com.example.check.security.UserDetailsServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,6 +40,9 @@ public class UserService {
 
     @Autowired
     private AuthenticationManager authenticationManager;
+
+    @Autowired
+    IAuthenticationFacade authenticationFacade;
 
     @Autowired
     private JwtTokenUtil jwtTokenUtil;

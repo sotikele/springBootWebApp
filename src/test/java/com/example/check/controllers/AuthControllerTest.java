@@ -3,7 +3,113 @@ package com.example.check.controllers;
 
 import com.example.check.models.User;
 import com.example.check.models.UserCredentials;
-import com.example.check.repositorys.UserRepository;
+import com.example.check.services.UserService;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import org.junit.Before;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.mockito.Mockito;
+import org.mockito.junit.MockitoJUnitRunner;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.http.MediaType;
+import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
+import org.springframework.test.web.servlet.result.MockMvcResultHandlers;
+import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
+
+
+import static org.mockito.Mockito.when;
+
+
+@RunWith(MockitoJUnitRunner.class)
+@WebMvcTest(AuthController.class)
+public class AuthControllerTest {
+
+
+    @Autowired
+    private MockMvc mockMvc;
+
+    private ObjectMapper objectMapper = new ObjectMapper();
+
+
+
+
+    @MockBean
+    UserService userService;
+
+
+    @Test
+    public void successfullSignUp() throws Exception {
+        User resource = new User();
+        resource.setName("John");
+        resource.setEmail("Doe@hotmail.com");
+        resource.setUsername("john");
+        resource.setPassword("12341234");
+
+
+        String json = objectMapper.writeValueAsString(resource);
+
+        when(userService.register(resource)).thenReturn("Bearer token");
+
+        mockMvc.perform(MockMvcRequestBuilders.post("/register")
+                .contentType(MediaType.APPLICATION_JSON)
+                .content(json))
+                .andExpect(MockMvcResultMatchers.status().isOk())
+                .andDo(MockMvcResultHandlers.print());
+    }
+
+
+       @Test
+    public void successfullSignIn() throws Exception {
+        UserCredentials userCredentials = new UserCredentials();
+
+        userCredentials.setUsername("john");
+        userCredentials.setPassword("12341234");
+
+
+        String json = objectMapper.writeValueAsString(userCredentials);
+
+        Mockito.when(userService.login(userCredentials.getUsername(),userCredentials.getPassword())).thenReturn("Bearer token");
+
+        mockMvc.perform(MockMvcRequestBuilders.post("/login")
+                .contentType(MediaType.APPLICATION_JSON)
+                .content(json))
+                .andExpect(MockMvcResultMatchers.status().isOk())
+                .andDo(MockMvcResultHandlers.print());
+    }
+
+
+    @Test
+    public void SignUpWithEmptyName() throws Exception {
+
+
+    }
+
+
+    @Test
+    public void SignUpWithEmptyEmailI() throws Exception {
+
+
+
+    }
+
+
+
+
+
+
+}
+
+
+
+
+/*
+
+import com.example.check.models.User;
+import com.example.check.models.UserCredentials;
+import com.example.check.repositories.UserRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.After;
 import org.junit.Before;
@@ -219,3 +325,4 @@ public class AuthControllerTest {
 
 
 }
+*/

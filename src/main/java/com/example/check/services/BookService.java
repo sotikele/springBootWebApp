@@ -3,8 +3,8 @@ package com.example.check.services;
 
 import com.example.check.models.Book;
 
-import com.example.check.repositorys.BookRepository;
-import com.example.check.repositorys.UserRepository;
+import com.example.check.repositories.BookRepository;
+import com.example.check.repositories.UserRepository;
 import com.example.check.security.UserContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

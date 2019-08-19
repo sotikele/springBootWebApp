@@ -9,7 +9,13 @@
         </ul>
     </div>
 </nav>
+<div ng-controller="welCtrl">
+<p>Select Language:</p>
 
+<select ng-model="selectedLanguage" ng-options="x for (x, y) in languages" ng-click="changeLanguage()">
+</select>
+    <h1>You selected: {{selectedLanguage}}</h1>
+</div>
 <header class="page-header header container-fluid">
     <div class="overlay"></div>
 </header>

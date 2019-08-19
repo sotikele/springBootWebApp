@@ -1,4 +1,8 @@
-var app = angular.module('myApp', ["ngRoute"]);
+
+
+
+var app = angular.module('myApp', ["ngRoute",'pascalprecht.translate','ngStorage',
+    'ngSanitize']);
 
 app.config(function ($routeProvider, $locationProvider) {
     $routeProvider
@@ -35,4 +39,17 @@ app.config(function ($routeProvider, $locationProvider) {
             }
         }).otherwise({redirectTo: '/'});
 });
+
+
+app.config(function ($translateProvider) {
+
+    $translateProvider
+        .preferredLanguage("en")
+        .fallbackLanguage("gr")
+        .useSanitizeValueStrategy("escaped")
+        .useUrlLoader("http://localhost:8080/key/"+"en");
+});
+
+
+
 

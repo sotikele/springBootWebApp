@@ -1,6 +1,6 @@
 <div class="container centerForm" style="width: 20%" ng-controller="loginCtrl">
     <form class="w-50" name="loginForm"  novalidate>
-        <h3>Sign In</h3>
+        <h3>{{ 'signIn' | translate }}</h3>
         <div class="input-group">
 
             <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
@@ -17,8 +17,8 @@
         <br><br>
 
 
-        <button type="button" class="btn btn-danger" ng-click="back()">Cancel</button>
-        <button class="btn btn-success" ng-click="login()"> Sign In</button>
+        <button type="button" class="btn btn-danger" ng-click="back()">{{ 'btnCancel' | translate }}</button>
+        <button class="btn btn-success" ng-click="login()"> {{ 'signIn' | translate }}</button>
 
     </form>
 

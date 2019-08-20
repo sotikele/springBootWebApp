@@ -17,10 +17,11 @@ translations:
   - group: ui
     locale: en
     keys:
-      - login: login
-      - register: register
+      - login: Login
+      - register: Register
       - welcome: Welcome
       - bestUi: BestUiEu
+        forceUpdate: true
       - signUp: Sign Up
       - plEnterName: Enter Name
       - plEnterEmail: Enter Email
@@ -28,11 +29,9 @@ translations:
       - plEnterPassword: Enter Password
       - plEnterRepeatPassword: Repeat Password
       - btnCancel: Cancel
-      - btnSignup: Sign Up
       - signIn: Sign In
       - plEnterUsernameSignInForm: username
-      - plEnterUsernameSignInForm: password
-      - btnSignIn: Sign In
+      - plEnterPasswordSignInForm: password
       - logOut: logout
       - changePassword: changePassword
       - checkYourBooks: Check Your Books
@@ -40,6 +39,8 @@ translations:
       - author: Author
       - addBook: Add Book
       - deleteBook: Delete Book
+      - enterTitle: Enter Title
+      - enterAuthor: Enter Author
 
 
   - group: errors
@@ -56,29 +57,30 @@ translations:
   - group: ui
     locale: gr
     keys:
-      - login: Sundesi
-      - register: Eggrafh
-      - welcome: Kalws Hrthate
-      - bestUi: kaliterhEmfanishEuropis
-      - signUp: Eggrafeite
-      - plEnterName: Eisagete Onoma
-      - plEnterEmail: Eisagete Email
-      - plEnterUserName: Eisagete onoma xrhsth
-      - plEnterPassword: Eisagete kodiko
-      - plEnterRepeatPassword: epanalavete kodiko
-      - btnCancel: akyrosi
-      - btnSignup: egrafeite
-      - signIn: sundetheite
-      - plEnterUsernameSignInForm: onoma xrhsth
-      - plEnterUsernameSignInForm: kodikos
-      - btnSignIn: sundetheite
-      - logOut: aposindesi
-      - changePassword: allahKodikou
-      - checkYourBooks: des ta vivlia sou
-      - title: titlos
-      - author: suntakths
-      - addBook: prosthese vivlio
-      - deleteBook: diegrapse vivlio
+      - login: Σύνδεση
+      - register: Eγγραφή
+      - welcome: Καλώς ήρθατε
+      - bestUi: καλύτερο Ui Ευρώπης
+        forceUpdate: true
+      - signUp: Εγγραφείτε
+      - plEnterName: Εισάγετε όνομα
+      - plEnterEmail: Εισάγετε email
+      - plEnterUserName: Εισάγετε ονομά χρήστη
+      - plEnterPassword: Εισάγετε κωδικό
+      - plEnterRepeatPassword: επαναλάβετε κωδικό
+      - btnCancel: Ακύρωση
+      - signIn: Συνδεθείτε
+      - plEnterUsernameSignInForm: Όνομα χρήστη
+      - plEnterPasswordSignInForm: Κωδικός
+      - logOut: Αποσύνδεση
+      - changePassword: Αλλαγή Κωδικού
+      - checkYourBooks: Δες τα βιβλία σου
+      - title: Τίτλος
+      - author: Συντάκτης
+      - addBook: Πρόσθεσε  βιβλίο
+      - deleteBook: Διέγραψε βιβλίο
+      - enterTitle: Εισάγετε τίτλο
+      - enterAuthor: Enter συντάκτη
   - group: reports
     locale: gr
     keys:

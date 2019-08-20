@@ -4,14 +4,14 @@
         <div class="input-group">
 
             <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-            <input type="text" class="form-control" name="username" ng-model="username" placeholder="username" required>
+            <input type="text" class="form-control" name="username" ng-model="username" placeholder="{{ 'plEnterUsernameSignInForm' | translate }}" required>
         </div>
         <br>
 
         <div class="input-group">
             <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
             <input type="password" class="form-control" name="password" ng-model="password" ng-minlength="8"
-                   placeholder="password" required>
+                   placeholder="{{ 'plEnterPasswordSignInForm' | translate }}" required>
         </div>
 
         <br><br>

@@ -1,10 +1,8 @@
-
-
-
-var app = angular.module('myApp', ["ngRoute",'pascalprecht.translate','ngStorage',
+var app = angular.module('myApp', ["ngRoute", 'pascalprecht.translate', 'ngStorage','ngCookies',
     'ngSanitize']);
 
 app.config(function ($routeProvider, $locationProvider) {
+    angular.lowercase = angular.$$lowercase;
     $routeProvider
         .when("/", {
             templateUrl: "view/welcome.html"
@@ -21,7 +19,7 @@ app.config(function ($routeProvider, $locationProvider) {
         }).when("/cpass", {
         templateUrl: "view/cpass.html",
         controller: "loginCtrl"
-        })
+    })
         .when("/home", {
             templateUrl: "view/home.html",
             controller: "homeCtrl",
@@ -46,8 +44,10 @@ app.config(function ($translateProvider) {
     $translateProvider
         .preferredLanguage("en")
         .fallbackLanguage("gr")
+        .useLocalStorage()
         .useSanitizeValueStrategy("escaped")
-        .useUrlLoader("http://localhost:8080/key/"+"en");
+        .useUrlLoader("http://localhost:8080/key");
+
 });
 
 

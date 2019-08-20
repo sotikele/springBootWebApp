@@ -1,27 +1,16 @@
 
 
-app.controller('welCtrl', function ($scope, $translateProvider,$http) {
+app.controller('welCtrl', function ($scope,$http,$translate) {
 
     $scope.languages = {
         English: "en",
-        Greeklish: "gr"
+        Greek: "gr"
     };
 
 
-    $scope.changeLanguage = function () {
-        $http({
-            method : "GET",
-            url : "http://localhost:8080/key/"+$scope.selectedLanguage
-        }).then(function mySuccess(response) {
-            $translateProvider.useUrlLoader("http://localhost:8080/key/"+$scope.selectedLanguage);
+    $scope.changeLanguage = function (locale) {
+            $translate.use(locale);
 
-
-
-            // $translate.use($scope.selectedLanguage);
-
-         }, function myError(response) {
-            $scope.message = response.data.message;
-        });
-    };
+   };
 });
 

@@ -1,15 +1,20 @@
 <nav class="navbar navbar-inverse">
     <div class="container-fluid">
         <div class="navbar-header">
-            <a class="navbar-brand" href="#">BestUiEu</a>
+            <a class="navbar-brand" href="#">{{ 'bestUi' | translate }}</a>
         </div>
         <ul class="nav navbar-nav">
-            <li><a href="#!/login">Login</a></li>
-            <li><a href="#!/register">Register</a></li>
+            <li><a href="#!/login">{{ 'login' | translate }}</a></li>
+            <li><a href="#!/register">{{ 'register' | translate }}</a></li>
         </ul>
     </div>
 </nav>
+<div ng-controller="welCtrl">
+<p>Select Language:</p>
 
+<select ng-model="locale" ng-options="x for (x, y) in languages" ng-click="changeLanguage(locale)">
+</select>
+</div>
 <header class="page-header header container-fluid">
     <div class="overlay"></div>
 </header>

@@ -4,7 +4,7 @@ package com.example.check.services;
 import com.example.check.errors.UsernameAlreadyExistsException;
 import com.example.check.models.Book;
 import com.example.check.models.User;
-import com.example.check.repositorys.UserRepository;
+import com.example.check.repositories.UserRepository;
 
 import com.example.check.security.IAuthenticationFacade;
 import com.example.check.security.JwtTokenUtil;

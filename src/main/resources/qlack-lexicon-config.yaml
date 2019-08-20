@@ -1,0 +1,93 @@
+groups:
+  - name: ui
+    description: UI translations
+  - name: reports
+    description: Translations of report title and descriptions
+  - name: errors
+    description: Translations of errors
+languages:
+  - name: English
+    locale: en
+  - name: Greek
+    locale: gr
+translations:
+  ################################################################################
+  # ENGLISH translations
+  ################################################################################
+  - group: ui
+    locale: en
+    keys:
+      - login: Login
+      - register: Register
+      - welcome: Welcome
+      - bestUi: BestUiEu
+        forceUpdate: true
+      - signUp: Sign Up
+      - plEnterName: Enter Name
+      - plEnterEmail: Enter Email
+      - plEnterUserName: Enter Username
+      - plEnterPassword: Enter Password
+      - plEnterRepeatPassword: Repeat Password
+      - btnCancel: Cancel
+      - signIn: Sign In
+      - plEnterUsernameSignInForm: username
+      - plEnterPasswordSignInForm: password
+      - logOut: logout
+      - changePassword: changePassword
+      - checkYourBooks: Check Your Books
+      - title: Title
+      - author: Author
+      - addBook: Add Book
+      - deleteBook: Delete Book
+      - enterTitle: Enter Title
+      - enterAuthor: Enter Author
+
+
+  - group: errors
+    locale: en
+    keys:
+      - warn: Warning
+      - unexpected_error: An unexpected error has occurred.
+      - login_failure: Login failed due to invalid credentials, please try again
+        forceUpdate: true
+        #forceUpdate flag is used to change a value of existing key
+  ################################################################################
+  # Greek translations
+  ################################################################################
+  - group: ui
+    locale: gr
+    keys:
+      - login: Σύνδεση
+      - register: Eγγραφή
+      - welcome: Καλώς ήρθατε
+      - bestUi: καλύτερο Ui Ευρώπης
+        forceUpdate: true
+      - signUp: Εγγραφείτε
+      - plEnterName: Εισάγετε όνομα
+      - plEnterEmail: Εισάγετε email
+      - plEnterUserName: Εισάγετε ονομά χρήστη
+      - plEnterPassword: Εισάγετε κωδικό
+      - plEnterRepeatPassword: επαναλάβετε κωδικό
+      - btnCancel: Ακύρωση
+      - signIn: Συνδεθείτε
+      - plEnterUsernameSignInForm: Όνομα χρήστη
+      - plEnterPasswordSignInForm: Κωδικός
+      - logOut: Αποσύνδεση
+      - changePassword: Αλλαγή Κωδικού
+      - checkYourBooks: Δες τα βιβλία σου
+      - title: Τίτλος
+      - author: Συντάκτης
+      - addBook: Πρόσθεσε  βιβλίο
+      - deleteBook: Διέγραψε βιβλίο
+      - enterTitle: Εισάγετε τίτλο
+      - enterAuthor: Enter συντάκτη
+  - group: reports
+    locale: gr
+    keys:
+      - reports_dir: Répertoire des rapports
+  - group: errors
+    locale: gr
+    keys:
+      - warn: Attention
+      - unexpected_error: Une erreur imprévue s'est produite
+      - login_failure: La connexion a échoué en raison d'informations d'identification non valides

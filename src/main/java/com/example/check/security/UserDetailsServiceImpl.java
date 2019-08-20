@@ -1,7 +1,7 @@
 package com.example.check.security;
 
 import com.example.check.models.User;
-import com.example.check.repositorys.UserRepository;
+import com.example.check.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

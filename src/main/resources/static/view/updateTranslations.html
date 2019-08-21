@@ -1,0 +1,22 @@
+<div class="container" ng-init="englishId='35ea9f2c-e174-4618-8bfe-6a233c1d7452';greekId='26dd1795-82c7-4a78-aa6e-1a1f4f27cce8'">
+    <h3 style="text-align: center"><b><ins>Update Translations</ins></b></h3>
+    <div class="table-responsive">
+        <table ng-table ="keyTable" class="table table-striped" >
+            <tr ng-repeat="key in keys" class="active">
+
+                <td data-title="'KeyName'" align="center" class="col-md-2">{{key.name}}</td>
+
+                <td data-title="'English'" align="center" class="col-md-2"  contenteditable="true" ng-repeat="(key,value) in keys.translations">{{key.translations.englishId}}</td>
+                <td data-title="'Greek'" align="center" class="col-md-2"  contenteditable="true">{{key.translations.greekId}}</td>
+
+                <td data-title="'Update'" align="center" class="col-md-1" ><span><button type="button" class="btn btn-danger btn-rounded btn-sm my-0">Update</button></span></td>
+
+            </tr>
+        </table>
+    </div>
+
+</div>
+
+
+
+

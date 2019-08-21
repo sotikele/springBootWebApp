@@ -1,12 +1,12 @@
-var app = angular.module('myApp', ["ngRoute", 'pascalprecht.translate', 'ngStorage','ngCookies',
-    'ngSanitize']);
+var app = angular.module('myApp', ['ngRoute', 'pascalprecht.translate', 'ngStorage','ngCookies',
+    'ngSanitize','ngTable']);
 
-app.config(function ($routeProvider, $locationProvider) {
+app.config(function ($routeProvider,$translateProvider) {
     angular.lowercase = angular.$$lowercase;
     $routeProvider
         .when("/", {
-            templateUrl: "view/welcome.html"
-
+            templateUrl: "view/welcome.html",
+            controller: "translationCtrl"
         })
         .when("/register", {
             templateUrl: "view/register.html",
@@ -19,6 +19,10 @@ app.config(function ($routeProvider, $locationProvider) {
         }).when("/cpass", {
         templateUrl: "view/cpass.html",
         controller: "loginCtrl"
+    }).when("/update", {
+        templateUrl: "view/updateTranslations.html",
+        controller: "translationCtrl"
+
     })
         .when("/home", {
             templateUrl: "view/home.html",
@@ -28,7 +32,7 @@ app.config(function ($routeProvider, $locationProvider) {
                     if ($window.sessionStorage.hasOwnProperty('token')) {
                         $location.path('/home');
                     } else {
-                        $location.path('/');    //redirect user to home.
+                        $location.path('/');
                         alert("You don't have access here");
                     }
                 }
@@ -36,18 +40,25 @@ app.config(function ($routeProvider, $locationProvider) {
 
             }
         }).otherwise({redirectTo: '/'});
-});
 
-
-app.config(function ($translateProvider) {
 
     $translateProvider
         .preferredLanguage("en")
         .fallbackLanguage("gr")
         .useLocalStorage()
         .useSanitizeValueStrategy("escaped")
-        .useUrlLoader("http://localhost:8080/key");
+        .useUrlLoader("http://localhost:8080/translations");
 
+
+
+});
+
+
+
+
+app.constant('languageID', {
+    English: '35ea9f2c-e174-4618-8bfe-6a233c1d7452',
+    Greek:'26dd1795-82c7-4a78-aa6e-1a1f4f27cce8'
 });
 
 

@@ -13,7 +13,7 @@ body {
     background: #f2f6e9;
 }
 .header {
-    background-image: url('https://upload.wikimedia.org/wikipedia/commons/e/e1/Duke_Humfrey%27s_Library_Interior_6%2C_Bodleian_Library%2C_Oxford%2C_UK_-_Diliff.jpg');
+  /* background-image: url('https://upload.wikimedia.org/wikipedia/commons/e/e1/Duke_Humfrey%27s_Library_Interior_6%2C_Bodleian_Library%2C_Oxford%2C_UK_-_Diliff.jpg'); */
     background-size: cover;
     background-position: center;
     position: relative;

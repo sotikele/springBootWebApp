@@ -24,28 +24,17 @@ public class TranslationController {
 
 
     @RequestMapping("/translations")
-    public Map<String, String> getData(@RequestParam String lang) {
+    public Map<String, String> getTranslations(@RequestParam String lang) {
 
         return keyService.getTranslationsForLocale(lang);
 
 
     }
 
-//    @RequestMapping("/keys/{pageNumber}")
-//    public Map<String, String> getAllKeys(@PathVariable String pageNumber ) {
-//         if(pageNumber.matches("1"))
-//
-//        return keyService.getTranslationsForLocale("en");
-//         else if(pageNumber.matches("2"))
-//             return keyService.getTranslationsForLocale("gr");
-//         else
-//             return null;
-//
-//
-//    }
+
 
     @RequestMapping("/keys/{page}/{size}")
-    public List<KeyDTO> getAllKeys(@PathVariable String page, @PathVariable String size ) {
+    public List<KeyDTO> getPagesForAllKeys(@PathVariable String page, @PathVariable String size ) {
 
         KeySearchCriteria criteria = new KeySearchCriteria();
         criteria.setPageable(PageRequest.of(Integer.parseInt(page),Integer.parseInt(size)));

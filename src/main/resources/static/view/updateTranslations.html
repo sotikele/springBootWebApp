@@ -2,12 +2,12 @@
     <h3 style="text-align: center"><b><ins>Update Translations</ins></b></h3>
     <div class="table-responsive">
         <table ng-table ="keyTable" class="table table-striped" >
-            <tr ng-repeat="key in keys" class="active">
+            <tr ng-repeat="key in keys" class="active">-
 
                 <td data-title="'KeyName'" align="center" class="col-md-2">{{key.name}}</td>
 
-                <td data-title="'English'" align="center" class="col-md-2"  contenteditable="true" ng-repeat="(key,value) in keys.translations">{{key.translations.englishId}}</td>
-                <td data-title="'Greek'" align="center" class="col-md-2"  contenteditable="true">{{key.translations.greekId}}</td>
+                <td data-title="'English'" align="center" class="col-md-2"  contenteditable="true">{{key.translations['0ecce6e4-9d18-47a0-b72e-fd72a56e905c']}}</td>
+                <td data-title="'Greek'" align="center" class="col-md-2"  contenteditable="true">{{key.translations['2db79fec-afab-4075-8476-90fd65587699']}}</td>
 
                 <td data-title="'Update'" align="center" class="col-md-1" ><span><button type="button" class="btn btn-danger btn-rounded btn-sm my-0">Update</button></span></td>
 

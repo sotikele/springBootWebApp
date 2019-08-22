@@ -41,18 +41,8 @@ translations:
       - deleteBook: Delete Book
       - enterTitle: Enter Title
       - enterAuthor: Enter Author
-
-
-  - group: errors
-    locale: en
-    keys:
-      - warn: Warning
-      - unexpected_error: An unexpected error has occurred.
-      - login_failure: Login failed due to invalid credentials, please try again
-        forceUpdate: true
-        #forceUpdate flag is used to change a value of existing key
   ################################################################################
-  # Greek translations
+  # GREEK translations
   ################################################################################
   - group: ui
     locale: gr
@@ -80,14 +70,4 @@ translations:
       - addBook: Πρόσθεσε  βιβλίο
       - deleteBook: Διέγραψε βιβλίο
       - enterTitle: Εισάγετε τίτλο
-      - enterAuthor: Enter συντάκτη
-  - group: reports
-    locale: gr
-    keys:
-      - reports_dir: Répertoire des rapports
-  - group: errors
-    locale: gr
-    keys:
-      - warn: Attention
-      - unexpected_error: Une erreur imprévue s'est produite
-      - login_failure: La connexion a échoué en raison d'informations d'identification non valides
+      - enterAuthor: Εισάγετε συντάκτη

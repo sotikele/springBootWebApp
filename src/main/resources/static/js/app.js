@@ -19,12 +19,12 @@ app.config(function ($routeProvider,$translateProvider) {
         }).when("/cpass", {
         templateUrl: "view/cpass.html",
         controller: "loginCtrl"
-    }).when("/update", {
-        templateUrl: "view/updateTranslations.html",
+
+    }).when("/translations", {
+        templateUrl: "view/translations.html",
         controller: "translationCtrl"
 
-    })
-        .when("/home", {
+    }).when("/home", {
             templateUrl: "view/home.html",
             controller: "homeCtrl",
             resolve: {
@@ -57,9 +57,11 @@ app.config(function ($routeProvider,$translateProvider) {
 
 
 app.constant('languageID', {
-    English: '35ea9f2c-e174-4618-8bfe-6a233c1d7452',
-    Greek:'26dd1795-82c7-4a78-aa6e-1a1f4f27cce8'
+    ENGLISH: '72c8e89b-431f-421d-840c-9d5d2a887f06',
+    GREEK:'00a6b293-8279-4bfb-85e1-a6fa375a726e'
 });
+
+
 
 
 

@@ -1,5 +1,4 @@
-app.controller('translationCtrl', function ($scope, $http, $window, $translate, ngTableParams, languageID, $location) {
-    var totalKeys;
+app.controller('translationCtrl', function ($scope, $http, $window, $translate, ngTableParams, languageID) {
 
     $scope.languages = {
         English: "en",
@@ -20,8 +19,8 @@ app.controller('translationCtrl', function ($scope, $http, $window, $translate, 
             url: "http://localhost:8080/key/update",
             data: {
                 'id': $scope.keys[index].id, 'translations': {
-                    "00a6b293-8279-4bfb-85e1-a6fa375a726e": $scope.keys[index].translations[languageID.GREEK],
-                    "72c8e89b-431f-421d-840c-9d5d2a887f06": $scope.keys[index].translations[languageID.ENGLISH]
+                    "244dfc69-9ef7-429f-b152-8017933b54be": $scope.keys[index].translations[languageID.GREEK],
+                    "8d65597e-0041-49b3-9c3f-fc061fefeeaa": $scope.keys[index].translations[languageID.ENGLISH]
                 }
             }
 
@@ -47,7 +46,7 @@ app.controller('translationCtrl', function ($scope, $http, $window, $translate, 
                 count: 10
 
             }, {
-                //static value needs information from backend
+
                 total: response.data,
 
                 getData: function ($defer, params) {
@@ -57,7 +56,7 @@ app.controller('translationCtrl', function ($scope, $http, $window, $translate, 
                     }).then(function mySuccess(response) {
 
                         $scope.keys = response.data;
-                        //params.total();
+
                         $defer.resolve($scope.keys);
 
                     });

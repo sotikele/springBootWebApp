@@ -57,8 +57,8 @@ app.config(function ($routeProvider,$translateProvider) {
 
 
 app.constant('languageID', {
-    ENGLISH: '72c8e89b-431f-421d-840c-9d5d2a887f06',
-    GREEK:'00a6b293-8279-4bfb-85e1-a6fa375a726e'
+    ENGLISH: '8d65597e-0041-49b3-9c3f-fc061fefeeaa',
+    GREEK:'244dfc69-9ef7-429f-b152-8017933b54be'
 });
 
 

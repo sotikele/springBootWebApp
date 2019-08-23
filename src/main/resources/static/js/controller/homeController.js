@@ -62,6 +62,16 @@ app.controller('homeCtrl', function($scope,$http,$window,$location,$timeout) {
     $scope.logOut=function () {
         $window.sessionStorage.removeItem('token');
         $location.path("/");
-    }
+    };
+
+
+    $scope.uploadImage = function (){
+
+    };
+
+
+
+
+
 
 });

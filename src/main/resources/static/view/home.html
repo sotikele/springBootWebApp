@@ -10,11 +10,12 @@
     </div>
 </nav>
 
-<div ng-controller="homeCtrl">
+<div>
 
     <div class="container">
 
-        <button type="button" class="btn btn-primary" ng-click="showUserBooks()">{{ 'checkYourBooks' | translate }}</button>
+        <button type="button" class="btn btn-primary" ng-click="showUserBooks()">{{ 'checkYourBooks' | translate }}
+        </button>
 
         <table class="table">
             <tr>
@@ -38,9 +39,22 @@
         <input type="text" placeholder="{{ 'enterTitle' | translate }}" ng-model="title" name="title"><br>
 
         <input type="text" placeholder="{{ 'enterAuthor' | translate }}" ng-model="author" name="author"><br>
-        <button type="button" class="btn btn-primary" ng-disabled="!myForm.title.$dirty && !myForm.author.$dirty"
-                ng-click="addBook()">{{ 'addBook' | translate }}
-        </button>
+
+        <div flow-init flow-transfers>
+            <label class="btn btn-default btn-file">
+                Choose Image <input type="file" style="display: none;" flow-btn>
+            </label>
+
+            <!-- transfers has all informations about the image  -->
+            <LABEL>{{transfers[0].name}} </LABEL>
+            <br>
+            <button type="button" class="btn btn-primary" ng-disabled="!myForm.title.$dirty && !myForm.author.$dirty"
+                    ng-click="addBook(); $flow.resume()">{{ 'addBook' | translate }}
+            </button>
+
+        </div>
+
+
         <p>{{addedMessage}}</p>
     </form>
 
@@ -48,9 +62,17 @@
         <h4> {{ 'deleteBook' | translate }}</h4>
         <input type="text" placeholder="{{ 'enterTitle' | translate }}" ng-model="dTitle" name="dTitle"><br>
 
-        <button type="button" class="btn btn-primary" ng-disabled="myForm.dTitle.$dirty" ng-click="deleteBook()">{{ 'deleteBook' | translate }}
+        <button type="button" class="btn btn-primary" ng-disabled="myForm.dTitle.$dirty" ng-click="deleteBook()">{{
+            'deleteBook' | translate }}
         </button>
         <p>{{deletedMessage}}</p>
     </form>
 </div>
 
+<script>$(document).on('change', ':file', function () {
+    var input = $(this),
+        numFiles = input.get(0).files ? input.get(0).files.length : 1,
+        label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
+    input.trigger('fileselect', [numFiles, label]);
+});
+</script>

@@ -13,12 +13,11 @@
     <version>0.0.1-SNAPSHOT</version>
     <name>check</name>
     <description>Demo project for Spring Boot</description>
-
     <properties>
         <java.version>1.8</java.version>
         <version.qlack>3.1.2</version.qlack>
     </properties>
-
+    
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -83,6 +82,11 @@
             <groupId>org.liquibase</groupId>
             <artifactId>liquibase-maven-plugin</artifactId>
             <version>3.4.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.eurodyn.qlack.fuse</groupId>
+            <artifactId>qlack-fuse-fileupload</artifactId>
+            <version>${version.qlack}</version>
         </dependency>
     </dependencies>
 

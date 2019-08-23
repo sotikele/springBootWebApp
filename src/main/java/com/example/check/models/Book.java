@@ -1,5 +1,6 @@
 package com.example.check.models;
 
+import com.eurodyn.qlack.fuse.fileupload.model.DBFile;
 
 import javax.persistence.*;
 
@@ -17,8 +18,12 @@ public class Book  {
     private String author;
     @Column
     private Integer userId;
-
-
+    @OneToOne
+    @JoinColumns({
+            @JoinColumn(name="id"),
+            @JoinColumn(name="chunkOrder")
+    })
+    private DBFile dbFile;
 
     public Book(){
 

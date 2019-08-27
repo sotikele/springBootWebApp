@@ -1,78 +1,78 @@
-<nav class="navbar navbar-inverse">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <a class="navbar-brand" href="#!/home">{{ 'welcome' | translate }}</a>
-        </div>
-        <ul class="nav navbar-nav">
-            <li><a href="#" type="button" ng-click="logOut() ">{{ 'logOut' | translate }}</a></li>
-            <li><a href="#!/cpass">{{ 'changePassword' | translate }}</a></li>
-        </ul>
-    </div>
-</nav>
+<div class="navbar">
+    <a class="navbar-brand" href="#!/home">{{ 'welcome' | translate }}</a>
+    <a href="#" type="button" ng-click="logOut() ">{{ 'logOut' | translate }}</a>
+    <a href="#!/cpass">{{ 'changePassword' | translate }}</a>
+    </ul>
+
+</div>
+
 
 <div>
 
-    <div class="container">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-3">
+                <form name="myForm" novalidate>
+                    <h4> {{ 'addBook' | translate }}</h4>
+                    <input type="text" placeholder="{{ 'enterTitle' | translate }}" ng-model="title" name="title"><br>
 
-        <button type="button" class="btn btn-primary" ng-click="showUserBooks()">{{ 'checkYourBooks' | translate }}
-        </button>
+                    <input type="text" placeholder="{{ 'enterAuthor' | translate }}" ng-model="author"
+                           name="author"><br>
 
-        <table class="table">
-            <tr>
-                <th>{{ 'title' | translate }}</th>
-                <th>{{ 'author' | translate }}</th>
-            </tr>
-            <tr class="info" ng-repeat="x in myData">
-                <td>{{ x.title }}</td>
-                <td>{{ x.author }}</td>
-            </tr>
-        </table>
-        <div ng-show=userMessages>
-            <p><b>{{noBooksMessage}}</b></p>
+                    <div flow-init flow-name="uploader.flow">
+
+                        <button class="btn btn-primary" flow-btn>{{ 'chooseImage' | translate }}</button>
+
+                        <button class="btn btn-primary" ng-click="uploader.flow.upload()">{{ 'upload' | translate }}
+                        </button>
+                        <LABEL>{{uploader.flow.files[0].name}} </LABEL>
+                        <br>
+                        <button type="button" class="btn btn-primary"
+                                ng-disabled="!myForm.title.$dirty || !myForm.author.$dirty || !uploader.flow.files[0].isComplete()"
+                                ng-click="addBook()">{{ 'addBook' | translate }}
+                        </button>
+
+                    </div>
+
+
+                </form>
+
+                <form name="delForm" novalidate>
+                    <h4> {{ 'deleteBook' | translate }}</h4>
+                    <input type="text" placeholder="{{ 'enterTitle' | translate }}" ng-model="dTitle" name="dTitle"><br>
+
+                    <button type="button" class="btn btn-primary" ng-disabled="myForm.dTitle.$dirty"
+                            ng-click="deleteBook()">{{
+                        'deleteBook' | translate }}
+                    </button>
+                    <p>{{deletedMessage}}</p>
+                </form>
+            </div>
+            <div class="col-sm-8">
+
+                <button type="button" class="btn btn-primary" ng-click="showBookList()">{{ 'bookList' | translate }}
+                </button>
+
+                <table class="table">
+                    <tr>
+                        <th>{{ 'title' | translate }}</th>
+                        <th>{{ 'author' | translate }}</th>
+                        <th>{{ 'image' | translate }}</th>
+                    </tr>
+                    <tr class="info" ng-repeat="x in myData">
+                        <td><b>{{ x.title }}</b></td>
+                        <td><b>{{ x.author }}</b></td>
+                        <td><img ng-src="data:image/JPEG;base64,{{x.image.data}}" width="100" height="100"></td>
+
+                    </tr>
+                </table>
+                <div ng-show=userMessages>
+                    <p><b>{{noBooksMessage}}</b></p>
+                </div>
+                <br>
+                <br>
+            </div>
         </div>
-        <br>
-        <br>
     </div>
-
-    <form name="myForm" novalidate>
-        <h4> {{ 'addBook' | translate }}</h4>
-        <input type="text" placeholder="{{ 'enterTitle' | translate }}" ng-model="title" name="title"><br>
-
-        <input type="text" placeholder="{{ 'enterAuthor' | translate }}" ng-model="author" name="author"><br>
-
-        <div flow-init flow-transfers>
-            <label class="btn btn-default btn-file">
-                Choose Image <input type="file" style="display: none;" flow-btn>
-            </label>
-
-            <!-- transfers has all informations about the image  -->
-            <LABEL>{{transfers[0].name}} </LABEL>
-            <br>
-            <button type="button" class="btn btn-primary" ng-disabled="!myForm.title.$dirty && !myForm.author.$dirty"
-                    ng-click="addBook(); $flow.resume()">{{ 'addBook' | translate }}
-            </button>
-
-        </div>
-
-
-        <p>{{addedMessage}}</p>
-    </form>
-
-    <form name="delForm" novalidate>
-        <h4> {{ 'deleteBook' | translate }}</h4>
-        <input type="text" placeholder="{{ 'enterTitle' | translate }}" ng-model="dTitle" name="dTitle"><br>
-
-        <button type="button" class="btn btn-primary" ng-disabled="myForm.dTitle.$dirty" ng-click="deleteBook()">{{
-            'deleteBook' | translate }}
-        </button>
-        <p>{{deletedMessage}}</p>
-    </form>
 </div>
 
-<script>$(document).on('change', ':file', function () {
-    var input = $(this),
-        numFiles = input.get(0).files ? input.get(0).files.length : 1,
-        label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
-    input.trigger('fileselect', [numFiles, label]);
-});
-</script>

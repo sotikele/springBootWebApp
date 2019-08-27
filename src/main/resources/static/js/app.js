@@ -1,7 +1,7 @@
-var app = angular.module('myApp', ['ngRoute', 'pascalprecht.translate', 'ngStorage','ngCookies',
-    'ngSanitize','ngTable','flow']);
+var app = angular.module('myApp', ['ngRoute', 'pascalprecht.translate', 'ngStorage', 'ngCookies',
+    'ngSanitize', 'ngTable', 'flow']);
 
-app.config(function ($routeProvider,$translateProvider) {
+app.config(function ($routeProvider, $translateProvider) {
     angular.lowercase = angular.$$lowercase;
     $routeProvider
         .when("/", {
@@ -25,21 +25,21 @@ app.config(function ($routeProvider,$translateProvider) {
         controller: "translationCtrl"
 
     }).when("/home", {
-            templateUrl: "view/home.html",
-            controller: "homeCtrl",
-            resolve: {
-                "check": function ($location, $window) {
-                    if ($window.sessionStorage.hasOwnProperty('token')) {
-                        $location.path('/home');
-                    } else {
-                        $location.path('/');
-                        alert("You don't have access here");
-                    }
+        templateUrl: "view/home.html",
+        controller: "homeCtrl",
+        resolve: {
+            "check": function ($location, $window) {
+                if ($window.sessionStorage.hasOwnProperty('token')) {
+                    $location.path('/home');
+                } else {
+                    $location.path('/');
+                    alert("You don't have access here");
                 }
-
-
             }
-        }).otherwise({redirectTo: '/'});
+
+
+        }
+    }).otherwise({redirectTo: '/'});
 
 
     $translateProvider
@@ -50,12 +50,11 @@ app.config(function ($routeProvider,$translateProvider) {
         .useUrlLoader("http://localhost:8080/translations");
 
 
-
 });
 
 
 app.config(["flowFactoryProvider",
-    function(flowFactoryProvider) {
+    function (flowFactoryProvider) {
 
 
         // # #####################################################################
@@ -81,18 +80,10 @@ app.config(["flowFactoryProvider",
     }]);
 
 
-
-
-
-
-
-
-
-
-        app.constant('languageID', {
-            ENGLISH: '8d65597e-0041-49b3-9c3f-fc061fefeeaa',
-            GREEK: '244dfc69-9ef7-429f-b152-8017933b54be'
-        });
+app.constant('languageID', {
+    ENGLISH: '8d65597e-0041-49b3-9c3f-fc061fefeeaa',
+    GREEK: '244dfc69-9ef7-429f-b152-8017933b54be'
+});
 
 
 

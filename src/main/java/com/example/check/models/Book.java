@@ -1,13 +1,11 @@
 package com.example.check.models;
 
-import com.eurodyn.qlack.fuse.fileupload.model.DBFile;
 
 import javax.persistence.*;
 
 
-
 @Entity(name = "books")
-public class Book  {
+public class Book {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,14 +16,11 @@ public class Book  {
     private String author;
     @Column
     private Integer userId;
-    @OneToOne
-    @JoinColumns({
-            @JoinColumn(name="id"),
-            @JoinColumn(name="chunkOrder")
-    })
-    private DBFile dbFile;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "image_id", referencedColumnName = "id")
+    private Image image;
 
-    public Book(){
+    public Book() {
 
 
     }
@@ -45,9 +40,6 @@ public class Book  {
         return bookId;
     }
 
-    public void setBookId(Integer bookId) {
-        this.bookId = bookId;
-    }
 
     public String getTitle() {
         return title;
@@ -71,5 +63,13 @@ public class Book  {
 
     public void setUserId(Integer userId) {
         this.userId = userId;
+    }
+
+    public Image getImage() {
+        return image;
+    }
+
+    public void setImage(Image image) {
+        this.image = image;
     }
 }

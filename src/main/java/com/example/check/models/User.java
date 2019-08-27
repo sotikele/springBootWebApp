@@ -7,7 +7,7 @@ import java.util.List;
 
 
 @Entity(name = "users")
-public class User  {
+public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,17 +24,17 @@ public class User  {
     private String password;
     @Column
     @NotEmpty(message = "username must not be empty")
-    private  String username;
+    private String username;
     @Column
-    private  String role;
+    private String role;
     @OneToMany(mappedBy = "userId")
     private List<Book> library;
 
-     public User(){
-         this.role = "user";
+    public User() {
+        this.role = "user";
     }
 
-    public User(String name, String email, String password, String username,  List<Book> library) {
+    public User(String name, String email, String password, String username, List<Book> library) {
         this.name = name;
         this.email = email;
         this.password = password;
@@ -47,9 +47,6 @@ public class User  {
         return userId;
     }
 
-    public void setUserId(Integer userId) {
-        this.userId = userId;
-    }
 
     public String getName() {
         return name;

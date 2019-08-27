@@ -1,10 +1,5 @@
 app.controller('translationCtrl', function ($scope, $http, $window, $translate, ngTableParams, languageID) {
 
-    $scope.languages = {
-        English: "en",
-        Greek: "gr"
-    };
-
 
     $scope.changeLanguage = function (locale) {
         $translate.use(locale);

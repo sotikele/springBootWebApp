@@ -50,6 +50,9 @@ translations:
       - updateTranslations: Update Translations
       - showList: showList
       - selectLanguage: Select Language
+      - image: Image
+      - chooseImage: Choose Image
+      - upload: Upload
   ################################################################################
   # GREEK translations
   ################################################################################
@@ -89,4 +92,7 @@ translations:
       - updateTranslations: Ενημέρωση Μεταφράσεων
       - showList: Δές την λίστα
       - selectLanguage: Διάλεξε Γλώσσα
+      - image: Εικόνα
+      - chooseImage: Διάλεξε Εικόνα
+      - upload: Ανέβασμα
 

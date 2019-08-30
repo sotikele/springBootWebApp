@@ -1,31 +1,17 @@
-
-#bg {
-    position: fixed;
-    top: 0;
-    left: 0;
-
-    min-width: 100%;
-    min-height: 100%;
-}
-body {
-    padding: 0;
-    margin: 0;
+body{
     background: #f2f6e9;
+    font-family: Arial, Helvetica, sans-serif;
 }
-.header {
-    background-image: url('https://upload.wikimedia.org/wikipedia/commons/e/e1/Duke_Humfrey%27s_Library_Interior_6%2C_Bodleian_Library%2C_Oxford%2C_UK_-_Diliff.jpg');
+.innerclass {
+
+    background: url("https://upload.wikimedia.org/wikipedia/commons/e/e1/Duke_Humfrey%27s_Library_Interior_6%2C_Bodleian_Library%2C_Oxford%2C_UK_-_Diliff.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
     background-size: cover;
-    background-position: center;
-    position: relative;
+    -o-background-size: cover;
 }
-.overlay {
-    position: absolute;
-    min-height: 100%;
-    min-width: 100%;
-    left: 0;
-    top: 0;
-    background: rgba(0, 0, 0, 0.6);
-}
+
+
 .centerForm {
     left: 50%;
     position: absolute;
@@ -33,3 +19,71 @@ body {
     transform: translate(-50%, -55%);
     text-align: center;
 }
+
+td {
+    text-align: center;
+}
+th {
+    color: #357ebd;
+    text-align: center;
+
+}
+.navbar {
+    overflow: hidden;
+    background-color: #333;
+}
+
+.navbar a {
+    float: left;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.dropdown {
+    float: left;
+    overflow: hidden;
+}
+
+.dropdown .dropbtn {
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+    background-color: red;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    z-index: 1;
+}
+
+.dropdown-content a {
+    float: none;
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: darkgray;
+}
+
+/* display: block; doesnt works */
+.dropdown:hover .dropdown-content {
+     display: contents;
+ }

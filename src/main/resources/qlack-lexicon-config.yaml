@@ -20,39 +20,41 @@ translations:
       - login: Login
       - register: Register
       - welcome: Welcome
-      - bestUi: BestUiEu
-        forceUpdate: true
       - signUp: Sign Up
-      - plEnterName: Enter Name
-      - plEnterEmail: Enter Email
-      - plEnterUserName: Enter Username
-      - plEnterPassword: Enter Password
-      - plEnterRepeatPassword: Repeat Password
-      - btnCancel: Cancel
+      - enterName: Enter Name
+      - enterEmail: Enter Email
+      - enterUsername: Enter Username
+      - enterPassword: Enter Password
+      - repeatPassword: Repeat Password
+      - cancel: Cancel
       - signIn: Sign In
-      - plEnterUsernameSignInForm: username
-      - plEnterPasswordSignInForm: password
+      - username: username
+      - password: password
       - logOut: logout
       - changePassword: changePassword
-      - checkYourBooks: Check Your Books
+      - bookList: BookList
       - title: Title
       - author: Author
       - addBook: Add Book
       - deleteBook: Delete Book
       - enterTitle: Enter Title
       - enterAuthor: Enter Author
-
-
-  - group: errors
-    locale: en
-    keys:
-      - warn: Warning
-      - unexpected_error: An unexpected error has occurred.
-      - login_failure: Login failed due to invalid credentials, please try again
-        forceUpdate: true
-        #forceUpdate flag is used to change a value of existing key
+      - currentPassword: Current Password
+      - newPassword: New Password
+      - translations: Translations
+      - save: Save
+      - greek: Greek
+      - english: English
+      - keyName: KeyName
+      - update: Update
+      - updateTranslations: Update Translations
+      - showList: showList
+      - selectLanguage: Select Language
+      - image: Image
+      - chooseImage: Choose Image
+      - upload: Upload
   ################################################################################
-  # Greek translations
+  # GREEK translations
   ################################################################################
   - group: ui
     locale: gr
@@ -60,34 +62,37 @@ translations:
       - login: Σύνδεση
       - register: Eγγραφή
       - welcome: Καλώς ήρθατε
-      - bestUi: καλύτερο Ui Ευρώπης
-        forceUpdate: true
       - signUp: Εγγραφείτε
-      - plEnterName: Εισάγετε όνομα
-      - plEnterEmail: Εισάγετε email
-      - plEnterUserName: Εισάγετε ονομά χρήστη
-      - plEnterPassword: Εισάγετε κωδικό
-      - plEnterRepeatPassword: επαναλάβετε κωδικό
-      - btnCancel: Ακύρωση
+      - enterName: Εισάγετε όνομα
+      - enterEmail: Εισάγετε email
+      - enterUsername: Εισάγετε ονομά χρήστη
+      - enterPassword: Εισάγετε κωδικό
+      - repeatPassword: Επαναλάβετε κωδικό
+      - cancel: Ακύρωση
       - signIn: Συνδεθείτε
-      - plEnterUsernameSignInForm: Όνομα χρήστη
-      - plEnterPasswordSignInForm: Κωδικός
+      - username: Όνομα χρήστη
+      - password: Κωδικός
       - logOut: Αποσύνδεση
       - changePassword: Αλλαγή Κωδικού
-      - checkYourBooks: Δες τα βιβλία σου
+      - bookList: Λίστα βιβλίων
       - title: Τίτλος
       - author: Συντάκτης
       - addBook: Πρόσθεσε  βιβλίο
       - deleteBook: Διέγραψε βιβλίο
       - enterTitle: Εισάγετε τίτλο
-      - enterAuthor: Enter συντάκτη
-  - group: reports
-    locale: gr
-    keys:
-      - reports_dir: Répertoire des rapports
-  - group: errors
-    locale: gr
-    keys:
-      - warn: Attention
-      - unexpected_error: Une erreur imprévue s'est produite
-      - login_failure: La connexion a échoué en raison d'informations d'identification non valides
+      - enterAuthor: Εισάγετε συντάκτη
+      - currentPassword: Tρέχων Κωδικός
+      - newPassword: Καινούργιος Κωδικός
+      - translations: Μεταφράσεις
+      - save: Αποθήκευση
+      - greek: Ελληνικά
+      - english: Αγγλικά
+      - keyName: Όνομα Κλειδιού
+      - update: Ενημέρωση
+      - updateTranslations: Ενημέρωση Μεταφράσεων
+      - showList: Δές την λίστα
+      - selectLanguage: Διάλεξε Γλώσσα
+      - image: Εικόνα
+      - chooseImage: Διάλεξε Εικόνα
+      - upload: Ανέβασμα
+

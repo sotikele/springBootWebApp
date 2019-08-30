@@ -5,8 +5,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 
 
-public interface BookRepository extends JpaRepository<Book,Integer> {
+public interface BookRepository extends JpaRepository<Book,String> {
 
-    Book findBookByUserIdAndTitle(Integer userId,String title);
+    Book findBookByUserIdAndTitle(String userId,String title);
 
 }

@@ -1,6 +1,5 @@
 package com.example.check.models;
 
-
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -13,23 +12,20 @@ import javax.persistence.*;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity(name = "books")
-public class Book {
+@Entity(name = "images")
+public class Image {
+
 
     @Id
     @GeneratedValue(generator = "uuid")
     @GenericGenerator(name = "uuid", strategy = "uuid2")
-    private String bookId;
-    @Column
-    private String title;
-    @Column
-    private String author;
-    @Column
-    private String userId;
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "image_id", referencedColumnName = "id")
-    private Image image;
+    private String id;
 
+    @Column(name = "image_name")
+    private String imageName;
+
+    @Column(name = "data")
+    private byte[] data;
 
 
 }

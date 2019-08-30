@@ -1,0 +1,27 @@
+<div class="container">
+    <h3 style="text-align: center"><b><ins>{{ 'updateTranslations' | translate }}</ins></b></h3>
+    <button ng-click="initTable()" class="btn btn-primary">{{ 'showList' | translate }} </button>
+    <div class="table-responsive">
+        <table ng-table ="keyTable" class="table table-striped" >
+            <tr ng-repeat="key in keys" class="active">
+
+                <td data-title="'keyName' | translate" align="center" class="col-md-2">{{key.name}}</td>
+
+                <td  data-title="'english' | translate" align="center" class="col-md-2" >
+                    <input style="background:#F2F2F2" type="text" value="{{key.translations['8d65597e-0041-49b3-9c3f-fc061fefeeaa']}}" ng-model="key.translations['8d65597e-0041-49b3-9c3f-fc061fefeeaa']"></td>
+
+                <td data-title="'greek' | translate" align="center" class="col-md-2"  >
+                    <input style="background:#F2F2F2" type="text" value="{{key.translations['244dfc69-9ef7-429f-b152-8017933b54be']}}" ng-model="key.translations['244dfc69-9ef7-429f-b152-8017933b54be']"></td>
+
+                <td data-title="'update' | translate" align="center" class="col-md-1" ><span>
+                    <button type="button" class="btn btn-danger btn-rounded btn-sm my-0" ng-click="updateTranslation($index)">{{ 'update' | translate }}</button></span></td>
+
+            </tr>
+        </table>
+    </div>
+
+</div>
+
+
+
+

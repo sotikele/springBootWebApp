@@ -10,13 +10,13 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class UserDTO {
+public class BookDTO {
 
-    private String name;
 
-    private String email;
+    private String title;
 
-    private  String role;
+    private String author;
 
+    private String file_id;
 
 }

@@ -1,5 +1,6 @@
 package com.example.check.controllers;
 
+import com.example.check.dtos.BookDTO;
 import com.example.check.services.BookService;
 import com.example.check.models.Book;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,25 +18,24 @@ public class BookController {
     BookService bookService;
 
 
-
     @GetMapping("/user/book/{id}")
-    public Optional<Book> getBook(@PathVariable String id){
+    public Optional<Book> getBook(@PathVariable String id) {
         return bookService.getBook(id);
     }
 
     @PostMapping("/user/book")
-    public void addBook(@RequestBody Book book) {
+    public void addBook(@RequestBody BookDTO bookDTO) {
 
-        bookService.addBook(book);
+        bookService.addBook(bookDTO);
     }
 
     @PostMapping("user/book/delete")
-    public ResponseEntity deleteBook(@RequestBody Map<String,String> s) {
-      return   bookService.deleteBook(s.get("title"));
+    public ResponseEntity deleteBook(@RequestBody Map<String, String> s) {
+        return bookService.deleteBook(s.get("title"));
     }
 
-    @RequestMapping(method=RequestMethod.PUT,value = "/book/{id}")
-    public void UpdateBook(@RequestBody Book book,@PathVariable String id) {
-       bookService.updateBook(book,id);
+    @RequestMapping(method = RequestMethod.PUT, value = "/book/{id}")
+    public void UpdateBook(@RequestBody Book book, @PathVariable String id) {
+        bookService.updateBook(book, id);
     }
 }

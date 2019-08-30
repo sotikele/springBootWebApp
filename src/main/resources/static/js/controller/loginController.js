@@ -24,8 +24,8 @@ app.controller('loginCtrl', function($scope,$http,$window,$location) {
         });
 
     };
-    $scope.back=function () {
-        $location.path("/");
+    $scope.back=function (path) {
+        $location.path(path);
     };
 
 

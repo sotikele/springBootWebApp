@@ -14,8 +14,8 @@ app.controller('translationCtrl', function ($scope, $http, $window, $translate, 
             url: "http://localhost:8080/key/update",
             data: {
                 'id': $scope.keys[index].id, 'translations': {
-                    "244dfc69-9ef7-429f-b152-8017933b54be": $scope.keys[index].translations[languageID.GREEK],
-                    "8d65597e-0041-49b3-9c3f-fc061fefeeaa": $scope.keys[index].translations[languageID.ENGLISH]
+                    "gr": $scope.keys[index].translations.gr,
+                    "en": $scope.keys[index].translations.en
                 }
             }
 

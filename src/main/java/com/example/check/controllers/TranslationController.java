@@ -45,30 +45,24 @@ public class TranslationController {
       return   keyService.findKeys(criteria,true);
     }
 
-//    @RequestMapping("/totalKeys")
-////    public Map<String,Long> getNumberOfKeys() {
-////        KeySearchCriteria criteria = new KeySearchCriteria();
-////        criteria.setKeyName("login");
-////
-////        Map<String,Long> total=new HashMap<>();
-////        total.put("total",  keyService.findTotalKeys(criteria));
-////        return  total;
-////
-////    }
-
-
     @RequestMapping("/totalKeys")
-   public Long getNumberOfKeys() {
+   public Map<String,Long> getNumberOfKeys() {
+        KeySearchCriteria criteria = new KeySearchCriteria();
 
-        return  keyRepository.count();
+        Map<String,Long> total=new HashMap<>();
+        total.put("total",  keyService.findTotalKeys(criteria));
+        return  total;
 
     }
+
+
+
 
 
     @PostMapping("/key/update")
     public void updateTranslationsForKey(@RequestBody KeyDTO keyDTO) {
 
-        keyService.updateTranslationsForKey(keyDTO.getId(),keyDTO.getTranslations());
+        keyService.updateTranslationsForKeyByLocale(keyDTO.getId(),keyDTO.getTranslations());
     }
 
 

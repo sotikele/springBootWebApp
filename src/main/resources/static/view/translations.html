@@ -8,10 +8,10 @@
                 <td data-title="'keyName' | translate" align="center" class="col-md-2">{{key.name}}</td>
 
                 <td  data-title="'english' | translate" align="center" class="col-md-2" >
-                    <input style="background:#F2F2F2" type="text" value="{{key.translations['8d65597e-0041-49b3-9c3f-fc061fefeeaa']}}" ng-model="key.translations['8d65597e-0041-49b3-9c3f-fc061fefeeaa']"></td>
+                    <input style="background:#F2F2F2" type="text" ng-value="key.translations.en" ng-model="key.translations.en"></td>
 
                 <td data-title="'greek' | translate" align="center" class="col-md-2"  >
-                    <input style="background:#F2F2F2" type="text" value="{{key.translations['244dfc69-9ef7-429f-b152-8017933b54be']}}" ng-model="key.translations['244dfc69-9ef7-429f-b152-8017933b54be']"></td>
+                    <input style="background:#F2F2F2" type="text" ng-value="key.translations.gr" ng-model="key.translations.gr"></td>
 
                 <td data-title="'update' | translate" align="center" class="col-md-1" ><span>
                     <button type="button" class="btn btn-danger btn-rounded btn-sm my-0" ng-click="updateTranslation($index)">{{ 'update' | translate }}</button></span></td>

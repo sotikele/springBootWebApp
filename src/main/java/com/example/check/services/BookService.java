@@ -4,10 +4,10 @@ package com.example.check.services;
 import com.eurodyn.qlack.fuse.fileupload.dto.DBFileDTO;
 import com.eurodyn.qlack.fuse.fileupload.service.impl.FileUploadImpl;
 import com.example.check.dtos.BookDTO;
+import com.example.check.mappers.BookMapper;
 import com.example.check.models.Book;
 import com.example.check.models.Image;
 import com.example.check.repositories.BookRepository;
-import com.example.check.repositories.UserRepository;
 import com.example.check.security.UserContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -22,16 +22,16 @@ import java.util.Optional;
 public class BookService {
 
     @Autowired
-    BookRepository bookRepository;
+    private  BookRepository bookRepository;
 
     @Autowired
-    UserRepository userRepository;
-    @Autowired
     private FileUploadImpl fileUpload;
+    @Autowired
+    private BookMapper bookMapper;
 
 
     public Optional<Book> getBook(String id) {
-        return bookRepository.findById(Integer.parseInt(id));
+        return bookRepository.findById(id);
     }
 
 
@@ -46,11 +46,8 @@ public class BookService {
         image.setData(dbFile.getFileData());
 
 
-        Book book = new Book();
-
+        Book book = bookMapper.bookDTOToBook(bookDTO);
         book.setUserId(user.getUser().getUserId());
-        book.setTitle(bookDTO.getTitle());
-        book.setAuthor(bookDTO.getAuthor());
         book.setImage(image);
 
         bookRepository.save(book);
@@ -71,7 +68,7 @@ public class BookService {
 
 
     public void updateBook(Book book, String id) {
-        bookRepository.deleteById(Integer.parseInt(id));
+        bookRepository.deleteById(id);
         bookRepository.save(book);
     }
 }

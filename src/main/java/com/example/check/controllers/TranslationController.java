@@ -9,6 +9,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.web.bind.annotation.*;
 
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -44,10 +45,23 @@ public class TranslationController {
       return   keyService.findKeys(criteria,true);
     }
 
-    @RequestMapping("/totalKeys")
-    public long getNumberOfKeys() {
+//    @RequestMapping("/totalKeys")
+////    public Map<String,Long> getNumberOfKeys() {
+////        KeySearchCriteria criteria = new KeySearchCriteria();
+////        criteria.setKeyName("login");
+////
+////        Map<String,Long> total=new HashMap<>();
+////        total.put("total",  keyService.findTotalKeys(criteria));
+////        return  total;
+////
+////    }
 
-        return     keyRepository.count();
+
+    @RequestMapping("/totalKeys")
+   public Long getNumberOfKeys() {
+
+        return  keyRepository.count();
+
     }
 
 

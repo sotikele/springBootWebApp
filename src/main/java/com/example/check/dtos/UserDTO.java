@@ -1,5 +1,15 @@
 package com.example.check.dtos;
 
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class UserDTO {
 
     private String name;
@@ -9,40 +19,4 @@ public class UserDTO {
     private  String role;
 
 
-    public UserDTO() {
-        //con
-
-        //comment
-    }
-
-
-    public UserDTO(String name, String email, String role) {
-        this.name = name;
-        this.email = email;
-        this.role = role;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getRole() {
-        return role;
-    }
-
-    public void setRole(String role) {
-        this.role = role;
-    }
 }
